@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Part 1</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+  <style>
+    #lottie-sale {
+      width: 200px;
+      height: 200px;
+    }
+  
+    #lottie-cube {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>my first lottie</h1>
+  <div id="lottie-sale"></div>
+  <div id="lottie-cube"></div>
+
+  <script>
+    const animationSale = bodymovin.loadAnimation({
+      container: document.getElementById('lottie-sale'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: './lottie-json-file/animation-sale.json'
+    });
+
+    const animationCube = bodymovin.loadAnimation({
+      container: document.getElementById('lottie-cube'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: './lottie-json-file/animation-cube.json'
+    });
+  </script>
+</body>
+
+</html>
