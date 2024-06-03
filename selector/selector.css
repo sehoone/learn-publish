@@ -1,0 +1,16 @@
+#product-overview {
+    background: #ff1b68;
+}
+
+/*
+h1 테그에 section-title 클래스가 글자색을 정의하고 있음.
+class 셀렉터가 우선순위가 높으므로 h1 태그의 색상이 section-title 클래스의 색상으로 변경됨.
+*/
+.section-title {
+    color: #2ddf5c;
+}
+
+h1 {
+    color: white;
+    font-family: 'Anton', sans-serif;
+}

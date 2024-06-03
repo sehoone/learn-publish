@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>uHost</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="selector.css">
+</head>
+
+<!--
+    selector 우선순위. css는 기본적으로 후순위에 정의된것이 우선순위가 높은데 selector의 우선순위에 의해서 적용이 다를 수 있다
+    1. inline style
+    2. id
+    3. class, attribute
+    4. tag(element)
+-->
+<body>
+    <main>
+        <section id="product-overview">
+            <h1>Get the freedom you deserve.</h1>
+        </section>
+        <section id="plans">
+            <h1 class="section-title">Choose Your Plan</h1>
+        </section>
+    </main>
+</body>
+
+</html>
