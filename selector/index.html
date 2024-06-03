@@ -17,6 +17,7 @@
     3. class, attribute
     4. tag(element)
 -->
+
 <body>
     <main>
         <section id="product-overview">
@@ -26,6 +27,61 @@
             <h1 class="section-title">Choose Your Plan</h1>
         </section>
     </main>
+    <div class="adjacent-sibling">
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <h2>not applied</h2>
+        <h3>not applied</h2>
+        <p>not applied</p>
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <p>-------------------------</p>
+    </div>
+    <div class="general-sibling">
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <h2>not applied</h2>
+        <h3>not applied</h2>
+        <p>css applied</p>
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <p>-------------------------</p>
+    </div>
+    <div class="child">
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <article><p>not applied</p></article>
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <p>-------------------------</p>
+    </div>
+    <div class="descaendant">
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <article><p>css applied</p></article>
+        <h2>not applied</h2>
+        <p>css applied</p>
+        <p>-------------------------</p>
+    </div>
 </body>
+
+<style>
+    /* 인접한 형제 선택자. 앞에서 지정한 요소의 바로 다음에 위치하는 형제 요소 */
+    .adjacent-sibling h2+p {
+        color: red;
+    }
+    /* 일반 형제 선택자. 두 개의 선택자 사이에 위치하여 뒤쪽 선택자의 요소와 앞쪽 선택자 요소의 부모 요소가 같고, 뒤쪽 선택자의 요소가 뒤에 위치할 때 선택 */
+    .general-sibling h2~p {
+        color: red;
+    }
+    /* 자식 선택자. 부모 요소의 직계 자식 요소를 선택 */
+    .child > p {
+        color: red;
+    }
+    /* 자손 선택자. 부모 요소의 모든 자손 요소를 선택 */
+    .descaendant  p {
+        color: red;
+    }
+</style>
 
 </html>
