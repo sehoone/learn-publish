@@ -14,3 +14,30 @@ h1 {
     color: white;
     font-family: 'Anton', sans-serif;
 }
+
+.adjacent-sibling, .general-sibling, .child, .descaendant{
+    border: black 1px solid;
+}
+.adjacent-sibling p,
+.adjacent-sibling h2,
+.adjacent-sibling h3 {
+    margin: 0.2rem;
+}
+
+.general-sibling p,
+.general-sibling h2,
+.general-sibling h3 {
+    margin: 0.2rem;
+}
+
+.child p,
+.child h2,
+.child h3 {
+    margin: 0.2rem;
+}
+
+.descaendant p,
+.descaendant h2,
+.descaendant h3 {
+    margin: 0.2rem;
+}

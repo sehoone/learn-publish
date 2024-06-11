@@ -1,0 +1,25 @@
+
+
+#product-overview {
+    background: #ff1b68;
+    /* width: 100%를 하게되면 margin 이 있기때문에 마진값이 더해져서 100%가 넘어가게 된다. 
+    그래서 calc를 사용하여 magin만큼 빼야 화면이 넘어가지 않음. 
+    border-box 를 사용하면 padding과 border은 포함하지만 margin은 포함하지 않아서 marhin만큼 뺌*/
+    /* width: 100%; */
+    width: calc(100% - 4rem);
+    height: 50rem;
+    /* padding은 컨텐츠와 테두리 사이의 간격을 지정하는 속성 */
+    padding: 3rem;
+    /* border는 테두리의 두께, 종류, 색상을 지정하는 속성 */
+    border: 1rem solid black;
+    /* margin은 요소와 요소 사이의 간격을 지정하는 속성 */
+    margin: 2rem;
+    /* box-sizing은 요소의 너비와 높이를 지정하는 속성 
+    - content-box는 요소의 너비와 높이에 padding과 border를 포함시키지 않음. 
+    예를 들어, 너비를 300px, 패딩을 20px, 테두리를 10px로 설정한 요소가 있다면, 이 요소의 총 너비는 300px (너비) + 40px (패딩 * 2) + 20px (테두리 * 2) = 360px이 됨
+    - border-box는 요소의 너비와 높이에 padding과 border를 포함시킴
+    */
+    box-sizing: border-box;
+}
+
+
