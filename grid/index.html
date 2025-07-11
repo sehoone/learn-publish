@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid 예제</title>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="grid.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="grid-demo">
+            <h1>CSS Grid</h1>
+            <div class="intro">
+                <p><strong>CSS Grid</strong>는 2차원 레이아웃 시스템으로, 행(row)과 열(column)을 동시에 제어.</p>
+                <p>Flexbox가 1차원(한 방향)이라면, Grid는 2차원(행과 열 모두)을 다룰 수 있어 복잡한 레이아웃을 쉽게 만들 수 있습니다.</p>
+            </div>
+
+            <!-- 1. 기본 Grid -->
+            <h2>1. 기본 Grid (3열 레이아웃)</h2>
+            <div class="explanation">
+                <p><code>grid-template-columns: repeat(3, 1fr)</code></p>
+                <p>✅ <strong>핵심 개념:</strong> 3개의 열을 만들고, 각 열이 동일한 너비(1fr)를 가집니다.</p>
+                <p>📝 <strong>fr 단위:</strong> fraction의 줄임말로, 사용 가능한 공간을 비율로 나눕니다.</p>
+            </div>
+            <div class="grid-container basic">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+            </div>
+            <!-- 2. Grid Rows 제어 -->
+            <h2>2. Grid Rows (행 높이 제어)</h2>
+            <div class="explanation">
+                <p><code>grid-template-rows: 60px 60px 60px</code></p>
+                <p>✅ <strong>핵심 개념:</strong> 각 행의 높이를 명시적으로 지정할 수 있습니다.</p>
+                <p>📝 <strong>활용법:</strong> 헤더, 메인, 푸터 영역의 높이를 다르게 설정할 때 유용합니다.</p>
+            </div>
+            <div class="grid-container rows">
+                <div class="grid-item">A</div>
+                <div class="grid-item">B</div>
+                <div class="grid-item">C</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">E</div>
+                <div class="grid-item">F</div>
+            </div>
+            <!-- 3. Grid Gap -->
+            <h2>3. Grid Gap (간격 조절)</h2>
+            <div class="explanation">
+                <p><code>gap: 24px</code></p>
+                <p>✅ <strong>핵심 개념:</strong> 그리드 아이템 사이의 간격을 한 번에 설정합니다.</p>
+                <p>📝 <strong>세부 설정:</strong> row-gap, column-gap으로 행과 열의 간격을 따로 설정할 수도 있습니다.</p>
+            </div>
+            <div class="grid-container gap">
+                <div class="grid-item">가</div>
+                <div class="grid-item">나</div>
+                <div class="grid-item">다</div>
+                <div class="grid-item">라</div>
+                <div class="grid-item">마</div>
+                <div class="grid-item">바</div>
+                <div class="grid-item">사</div>
+                <div class="grid-item">아</div>
+            </div>
+            <!-- 4. Grid Area -->
+            <h2>4. Grid Area (영역 기반 레이아웃)</h2>
+            <div class="explanation">
+                <p><code>grid-template-areas</code>로 레이아웃을 시각적으로 정의</p>
+                <p>✅ <strong>핵심 개념:</strong> 영역에 이름을 부여하고, 각 요소를 해당 영역에 배치합니다.</p>
+                <p>📝 <strong>장점:</strong> 레이아웃 구조를 한눈에 파악할 수 있고, 반응형 디자인에서 쉽게 재배치 가능합니다.</p>
+            </div>
+            <div class="grid-container area">
+                <div class="grid-item item-header">Header</div>
+                <div class="grid-item item-sidebar">Sidebar</div>
+                <div class="grid-item item-main">Main</div>
+                <div class="grid-item item-footer">Footer</div>
+            </div>
+
+            <!-- 5. 추가 예제들 -->
+            <h2>5. Grid 라인 기반 배치</h2>
+            <div class="explanation">
+                <p><code>grid-column: 1 / 3</code>, <code>grid-row: 1 / 2</code></p>
+                <p>✅ <strong>핵심 개념:</strong> 그리드 라인 번호를 사용해 정확한 위치에 아이템을 배치합니다.</p>
+                <p>📝 <strong>활용법:</strong> 특정 아이템을 여러 셀에 걸쳐 배치할 때 사용합니다.</p>
+            </div>
+            <div class="grid-container line-based">
+                <div class="grid-item spanning-item">2칸 차지</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+            </div>
+
+            <h2>6. 자동 배치 (Auto-fit)</h2>
+            <div class="explanation">
+                <p><code>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))</code></p>
+                <p>✅ <strong>핵심 개념:</strong> 화면 크기에 따라 자동으로 열의 개수가 조정됩니다.</p>
+                <p>📝 <strong>반응형:</strong> 브라우저 창 크기를 조정해보세요! 자동으로 레이아웃이 변경됩니다.</p>
+            </div>
+            <div class="grid-container auto-fit">
+                <div class="grid-item">반응형 1</div>
+                <div class="grid-item">반응형 2</div>
+                <div class="grid-item">반응형 3</div>
+                <div class="grid-item">반응형 4</div>
+                <div class="grid-item">반응형 5</div>
+                <div class="grid-item">반응형 6</div>
+            </div>
+
+            <h2>7. 정렬 속성</h2>
+            <div class="explanation">
+                <p><code>justify-items</code>, <code>align-items</code>, <code>place-items</code></p>
+                <p>✅ <strong>핵심 개념:</strong> 그리드 아이템들을 셀 내에서 정렬하는 방법을 제어합니다.</p>
+                <p>📝 <strong>차이점:</strong> justify는 수평, align은 수직, place는 둘 다 한번에 설정합니다.</p>
+            </div>
+            <div class="grid-container alignment">
+                <div class="grid-item">중앙</div>
+                <div class="grid-item">정렬</div>
+                <div class="grid-item">예제</div>
+                <div class="grid-item">테스트</div>
+            </div>
+
+            <!-- 요약 및 추가 학습 자료 -->
+            <div class="summary">
+                <h2>🎯 CSS Grid 핵심 요약</h2>
+                <ul>
+                    <li><strong>display: grid</strong> - 그리드 컨테이너 생성</li>
+                    <li><strong>grid-template-columns/rows</strong> - 열/행 크기 정의</li>
+                    <li><strong>gap</strong> - 아이템 간 간격 설정</li>
+                    <li><strong>grid-template-areas</strong> - 영역 기반 레이아웃</li>
+                    <li><strong>grid-column/row</strong> - 라인 기반 배치</li>
+                    <li><strong>auto-fit/auto-fill</strong> - 반응형 레이아웃</li>
+                </ul>
+                
+                <h3>🔗 추가 학습 리소스</h3>
+                <p>🎮 <strong>연습 게임:</strong> CSS Grid Garden (cssgridgarden.com)</p>
+                <p>📚 <strong>상세 가이드:</strong> MDN CSS Grid Layout 문서</p>
+                <p>🛠️ <strong>도구:</strong> Firefox DevTools의 Grid Inspector</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
