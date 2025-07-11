@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Transform: translate 예제</title>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="translate.css">
+    <style>
+        body { background: #f4f6fa; }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="translate-demo">
+            <h1>CSS <code>translate</code> 예제</h1>
+            <div class="explanation">
+                <p><strong>transform: translate</strong>는 요소를 x, y축 방향으로 시각적으로 이동시키는 CSS 속성.</p>
+                <ul>
+                    <li><code>translateX(px)</code>: X축(가로)으로 이동</li>
+                    <li><code>translateY(px)</code>: Y축(세로)으로 이동</li>
+                    <li><code>translate(x, y)</code>: X, Y축 동시에 이동</li>
+                </ul>
+                <hr>
+                <ul>
+                    <li><strong>원리:</strong> translate는 요소의 <u>레이아웃 위치</u>는 그대로 두고, <u>화면에만 이동된 것처럼</u> 보이게 만듭니다.</li>
+                    <li><strong>주의:</strong> translate로 이동한 요소는 실제로는 원래 위치에 있으므로, 다른 요소와의 겹침이나 이벤트(클릭 등) 처리에 영향을 줄 수 있습니다.</li>
+                    <li><strong>활용 팁:</strong> 애니메이션, 드래그&드롭, 인터랙션, 모달/팝업 등장 효과 등에 자주 사용됩니다.</li>
+                    <li><strong>성능:</strong> transform은 GPU 가속이 적용되어 부드러운 애니메이션이 가능합니다.</li>
+                    <li><strong>조합:</strong> scale, rotate 등과 함께 사용하면 다양한 시각 효과를 연출할 수 있습니다.</li>
+                </ul>
+            </div>
+            <h2>기본 예제</h2>
+            <div class="translate-container">
+                <div class="translate-item">기본</div>
+                <div class="translate-item translate-x">translateX(80px)</div>
+                <div class="translate-item translate-y">translateY(40px)</div>
+                <div class="translate-item translate-xy">translate(60px, 30px)</div>
+            </div>
+            <h2>클릭 시 이동하는 Sidebar 예제</h2>
+            <div class="explanation">
+                <p>아래 박스를 클릭하면 sidebar처럼 오른쪽으로 이동합니다.<br>다시 클릭하면 원래 위치로 돌아옵니다.</p>
+            </div>
+            <div class="translate-container">
+                <div class="translate-item sidebar-demo" id="sidebar-demo">Sidebar</div>
+            </div>
+            <h2>호버 효과</h2>
+            <div class="translate-container">
+                <div class="translate-item hover-demo">마우스를 올려보세요</div>
+            </div>
+            <h2>애니메이션 예제</h2>
+            <div class="translate-container">
+                <div class="translate-item animated-demo">애니메이션 이동</div>
+            </div>
+            <div class="summary">
+                <h3>핵심 요약</h3>
+                <ul>
+                    <li>translate는 레이아웃에 영향 없이 시각적으로만 이동</li>
+                    <li>애니메이션, 인터랙션에 자주 사용</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script>
+    function applyTranslate() {
+        var x = document.getElementById('input-x').value;
+        var y = document.getElementById('input-y').value;
+        var demo = document.getElementById('custom-demo');
+        demo.style.transform = `translate(${x}px, ${y}px)`;
+    }
+    // 3D 예제: perspective 적용
+    window.onload = function() {
+        // sidebar 클릭 이동 예제
+        var sidebar = document.getElementById('sidebar-demo');
+        var moved = false;
+        if (sidebar) {
+            sidebar.style.cursor = 'pointer';
+            sidebar.onclick = function() {
+                moved = !moved;
+                if (moved) {
+                    sidebar.style.transform = 'translateX(120px)';
+                    sidebar.style.background = '#f39c12';
+                    sidebar.textContent = 'Sidebar (클릭시 원위치)';
+                } else {
+                    sidebar.style.transform = 'translateX(0)';
+                    sidebar.style.background = '';
+                    sidebar.textContent = 'Sidebar';
+                }
+            }
+        }
+    }
+    </script>
+</body>
+</html>
